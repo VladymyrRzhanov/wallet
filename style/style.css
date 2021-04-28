@@ -105,6 +105,10 @@ tbody > tr {
   border-top-right-radius: 10px;
 }
 
+.report-field {
+  width: 50%;
+}
+
 .form-operation {
   width: 380px;
   margin: 0 auto;

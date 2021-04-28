@@ -8,24 +8,19 @@ const refs = {
     btn: document.querySelector('[data-btn]'),
 };
 
-refs.inputName.addEventListener('input', addIncome)
-
-refs.inputValue.addEventListener('input', addIncome);
-
-
 let incomeValue = 0;
 let costsValue = 0;
 
-function addIncome() {
+const addIncome = () => {
     refs.btn.classList.remove('is-active');
 
     if (refs.inputValue.value.length >= 3 && refs.inputName.value.length > 0) {
         refs.btn.classList.add('is-active');
-        refs.btn.addEventListener('click', onBtnClickAddIncome);
+        refs.btn.addEventListener('click', onBtnClickAddValue);
     };
 };
 
-function onBtnClickAddIncome() {
+const onBtnClickAddValue = () => {
 
     if (Number(refs.inputValue.value) > 0) {
         incomeValue += Number(refs.inputValue.value);
@@ -37,7 +32,27 @@ function onBtnClickAddIncome() {
 
     refs.balance.textContent = incomeValue - costsValue;
     refs.btn.classList.remove('is-active');
+    creatHistoryReport()
     refs.inputValue.value = '';
-
+    refs.inputName.value = '';
 };
 
+const creatHistoryReport = () => {
+    const historyReport = () => 
+        [`<div class="order-report">
+    <div class="report-field">
+    ${refs.inputName.value}
+    </div>
+    <div class="report-field">
+    ${refs.inputValue.value}&#8372;
+    </div>
+    </div>
+    `].join(' ');
+    refs.reportsFields.insertAdjacentHTML('afterend', historyReport());
+}
+
+
+
+refs.inputName.addEventListener('input', addIncome);
+
+refs.inputValue.addEventListener('input', addIncome);

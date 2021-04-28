@@ -109,6 +109,14 @@ tbody > tr {
   width: 50%;
 }
 
+.report-field:first-child {
+  text-align: left;
+}
+
+.report-field:last-child {
+  text-align: right;
+}
+
 .form-operation {
   width: 380px;
   margin: 0 auto;

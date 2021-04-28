@@ -17,6 +17,13 @@ const addIncome = () => {
     if (refs.inputValue.value.length >= 3 && refs.inputName.value.length > 0) {
         refs.btn.classList.add('is-active');
         refs.btn.addEventListener('click', onBtnClickAddValue);
+        window.addEventListener('keypress', onKeyPress);
+    };
+};
+
+const onKeyPress = (event) => {
+    if (event.key === "Enter") {
+        onBtnClickAddValue();
     };
 };
 
@@ -29,29 +36,35 @@ const onBtnClickAddValue = () => {
         costsValue -= Number(refs.inputValue.value);
         refs.costs.textContent = -costsValue;
     };
+    addBalanceValue()
+    creatHistoryReport();
+    clearInputs();
+};
 
+const addBalanceValue = () => {
     refs.balance.textContent = incomeValue - costsValue;
     refs.btn.classList.remove('is-active');
-    creatHistoryReport()
+};
+
+const clearInputs = () => {
     refs.inputValue.value = '';
     refs.inputName.value = '';
 };
 
 const creatHistoryReport = () => {
-    const historyReport = () => 
+    const historyReport = () =>
         [`<div class="order-report">
-    <div class="report-field">
-    ${refs.inputName.value}
-    </div>
-    <div class="report-field">
-    ${refs.inputValue.value}&#8372;
-    </div>
-    </div>
-    `].join(' ');
+        <div class="report-field">
+        ${refs.inputName.value}
+        </div>
+        <div class="report-field">
+        ${refs.inputValue.value} &#8372;
+        </div>
+        </div>
+        `].join(' ');
+        
     refs.reportsFields.insertAdjacentHTML('afterend', historyReport());
-}
-
-
+};
 
 refs.inputName.addEventListener('input', addIncome);
 

@@ -1,0 +1,159 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.calculate-table {
+  width: 400px;
+  height: 120px;
+  padding: 15px;
+  margin: 0 auto;
+  border: 1px solid rgb(220 220 220 / 80%);
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+}
+
+.calculate-table > thead {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(220 220 220 / 80%);
+}
+
+.balance {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-calculate {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.calculate-title {
+  margin-bottom: 25px;
+}
+
+tbody > tr {
+  display: flex;
+}
+
+.column-operation {
+  flex-grow: 1;
+  padding-top: 10px;
+}
+
+.column-operation > p {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.column-operation:first-child {
+  border-right: 1px solid rgb(220 220 220 / 80%);
+}
+
+.income-text {
+  color: green;
+}
+
+.costs-text {
+  color: red;
+}
+
+.section-history {
+  padding-bottom: 50px;
+}
+
+.history-title {
+  margin-bottom: 30px;
+}
+
+.order-report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  padding: 15px 35px 15px 10px;
+  border: 1px solid green;
+  border-left: 10px solid green;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 10px solid green;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.form-operation {
+  width: 380px;
+  margin: 0 auto;
+  padding: 15px 15px 30px;
+  background-color: rgb(220 220 220);
+  border-radius: 20px;
+}
+
+.form-title {
+  margin-bottom: 15px;
+}
+
+.fields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.input-field::placeholder {
+  color: rgb(220 220 220);
+}
+
+.input-field:focus {
+  border: 1px solid orange;
+  outline: none;
+}
+
+.form-button {
+  background-color: rgb(255 165 0);
+  border: 1px solid orange;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(255 250 250);
+}
+
+.form-button.is-active {
+  background-color: #ffffff;
+  color: orange;
+  cursor: pointer;
+}
